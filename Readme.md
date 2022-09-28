@@ -1,3 +1,7 @@
+## How to Setup a TypeScript + Node.js Project
+
+https://khalilstemmler.com/blogs/typescript/node-starter-project/
+
 ## Install typescript
 
 npm i -D typescript
@@ -50,3 +54,35 @@ In order to start the app in production, all we need to do is run the build comm
 The startup script looks like this.
 
 "start": "npm run build && node build/index.js"
+
+==========================================================================
+
+## How to use ESLint with TypeScript
+
+https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/
+
+## Installation and setup
+
+Run the following commands to setup ESLint in your TypeScript project.
+
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
+
+Create an .eslintrc file.
+
+## Ignoring files we don't want to lint
+
+Create an .eslintignore in order to prevent ESLint from linting stuff we don't want it to.
+
+## Adding a lint script
+
+In your project package.json, lets add a lint script in order to lint all TypeScript code.
+
+## Ready to try it out?
+
+Let's run the following command.
+
+npm run lint
+
+## Adding a rule
+
+In .eslintrc, add a new attribute to the json object called "rules".
