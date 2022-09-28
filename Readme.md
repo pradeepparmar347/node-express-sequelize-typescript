@@ -86,3 +86,95 @@ npm run lint
 ## Adding a rule
 
 In .eslintrc, add a new attribute to the json object called "rules".
+
+## Extending a different base config
+
+Let's say that you wanted to start with a different base config- Shopify's, for example.
+
+Here's how to do that.
+
+Looking at the readme, we need to install it by running:
+
+npm install eslint-plugin-shopify --save-dev
+npm i -D eslint-config-airbnb-base (in this project)
+
+Update our .eslintrc
+"extends": [
+"eslint:recommended",
+"plugin:@typescript-eslint/eslint-recommended",
+"plugin:@typescript-eslint/recommended",
+"airbnb-base"
+]
+
+## Fixing linted code with ESLint
+
+You might have noticed that at the end of the error message, it says "2 errors and 0 warnings potentially fixable with the --fix option."
+
+You can run ESLint and tell it to fix things that it's able to fix at the same time.
+
+Using the --fix option, let's add a new script to our package.json called lint-and-fix.
+
+## How to use Prettier with ESLint and TypeScript in VSCode
+
+https://khalilstemmler.com/blogs/tooling/prettier/
+
+## Installing Prettier
+
+First thing's first, we'll install Prettier as a dev dependency.
+
+npm install --save-dev prettier
+
+## Configuring Prettier
+
+As per the docs, we can expose a JSON file called .prettierrc to put our configuration within.
+Add the following script to your package.json.
+"prettier-format": "prettier --config .prettierrc 'src/\*_/_.ts' --write"
+And then run it.
+
+npm run prettier-format
+
+## Using Prettier
+
+One of the most common ways that people use Prettier is to install the VS Code extension that adds it to your editor.
+
+It enables you to, on save, format your code.
+
+## Formatting using VSCode on save (recommended)
+
+Install the Prettier VS Code extension
+in the file .vscode/settings.json add following lines in the object
+
+// Default (format when you paste)
+"editor.formatOnPaste": true,
+// Default (format when you save)
+"editor.formatOnSave": true,
+
+## Formatting before a commit (recommended)
+
+When working with other developers as a team, it can be challenging to keep the formatting of the code clean constantly. Not everyone will want to use the Prettier VS Code extension. Not everyone will want to use VS Code!
+
+How do we ensure that any code that gets commited and pushed to source control is properly formatted first?
+
+Read the next post, "Enforcing Coding Conventions with Husky Pre-commit Hooks"(https://khalilstemmler.com/blogs/tooling/enforcing-husky-precommit-hooks/).
+
+## Configuring Prettier to work with ESLint
+
+With ESLint and Prettier already installed, install these two packages as well.
+
+npm install --save-dev eslint-config-prettier eslint-plugin-prettier
+make an adjustment to the .eslintrc
+{
+...
+"plugins": [
+...
+"prettier"
+],
+"extends": [
+...
+"prettier"
+],
+"rules": {
+...
+"prettier/prettier": 2 // Means error
+}
+}

@@ -1,13 +1,16 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
+    "prettier"
   ],
   "rules": {
-    "no-console": 2 // Remember, this means error!
+    "no-console": 1, // Remember, this means error!
+    "prettier/prettier": 2 // Means error
   }
 }

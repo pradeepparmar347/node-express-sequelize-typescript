@@ -8,8 +8,8 @@ function isAdult(user: User): boolean {
 }
 
 const justine: User = {
-  name: "Justine",
-  age: 23,
+  name: 'Justine',
+  age: 23
 };
 
 const isJustineAnAdult: boolean = isAdult(justine);
