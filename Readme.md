@@ -198,3 +198,33 @@ To configure Husky, in the root of our project's package.json, add the following
 "...": "..."
 }
 }
+
+## add node types
+https://blog.logrocket.com/how-to-set-up-node-typescript-express/
+
+npm install express dotenv
+npm i -D typescript @types/express @types/node
+npx tsc --init (already done in this project, so just skip this one ;-))
+
+## Better logs for ExpressJS using Winston and Morgan with Typescript
+https://levelup.gitconnected.com/better-logs-for-expressjs-using-winston-and-morgan-with-typescript-1c31c1ab9342
+
+## Install Winston
+npm install winston
+
+## Configure Winston
+src/lib/logger.ts
+
+## Install Morgan
+Morgan is a NodeJS middleware that is needed to customize request logs.
+
+npm install morgan @types/morgan
+
+## Configure Morgan
+
+src/config/morganMiddleware.ts
+
+## Add as a middleware in the app
+index.ts
+
+app.use(morganMiddleware)
