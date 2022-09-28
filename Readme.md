@@ -178,3 +178,23 @@ make an adjustment to the .eslintrc
 "prettier/prettier": 2 // Means error
 }
 }
+
+## Enforcing Coding Conventions with Husky Pre-commit Hooks
+
+## Installing Husky
+
+To install Husky, run:
+
+npm install husky --save-dev
+
+## Configuring Husky
+
+To configure Husky, in the root of our project's package.json, add the following husky key:
+
+"husky": {
+"hooks": {
+"pre-commit": "", // Command goes here
+"pre-push": "", // Command goes here
+"...": "..."
+}
+}
