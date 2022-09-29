@@ -7,9 +7,9 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Nest Debug",
+      "name": "Debug",
       "runtimeExecutable": "nodemon",
-      "runtimeArgs": ["run", "start:dev"],
+      // "runtimeArgs": ["run", "start:dev"],
       "console": "integratedTerminal",
       "restart": true,
       "protocol": "auto",
